@@ -25,3 +25,26 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: 'Inconsolata-Regular';
+  src: url('./fonts/Inconsolata-Regular.ttf') format('truetype');
+}
+
+/* CSS Reset */
+h1,
+h2,
+h3,
+p,
+span,
+a,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  color: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
