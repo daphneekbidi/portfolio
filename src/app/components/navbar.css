@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    color: #333;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .menu a:focus,
+  .menu a:hover {
+    text-decoration: underline;
+  }
+  
