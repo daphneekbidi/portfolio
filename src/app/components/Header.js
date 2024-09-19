@@ -12,9 +12,15 @@ const Header = () => {
             I love brewing tea in the morning and open my Macbook to code 💻 from home. When I’m not squashing bugs, you’ll find me daydreaming about the next project or petting my cats 🐱. Let’s create something awesome together!
           </p>
         </div>
-        <div className="pt-14" role="img" aria-label="Animation Placeholder">
+        <div className="pt-14" role="img" aria-label="Auto-portrait made by AI">
           <>
-            <Image src="/portrait.jpg" alt="Portrait" width={350} height={350} />
+            <Image 
+              src="/portrait.jpg"
+              alt="Portrait"
+              width={350}
+              height={350}
+              priority
+            />
           </>
         </div>
       </div>
