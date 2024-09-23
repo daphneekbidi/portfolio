@@ -3,33 +3,33 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 
 const Work = () => {
-    useEffect(() => {
-        const textElement = document.getElementById('text-element');
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                textElement.classList.add('opacity-50');
-              } else {
-                textElement.classList.remove('opacity-50');
-              }
-            });
-          },
-          { threshold: 0.5 } // Adjust the threshold as needed
-        );
+    // useEffect(() => {
+    //     const textElement = document.getElementById('text-element');
+    //     const observer = new IntersectionObserver(
+    //       (entries) => {
+    //         entries.forEach((entry) => {
+    //           if (entry.isIntersecting) {
+    //             textElement.classList.add('opacity-50');
+    //           } else {
+    //             textElement.classList.remove('opacity-50');
+    //           }
+    //         });
+    //       },
+    //       { threshold: 0.5 } // Adjust the threshold as needed
+    //     );
     
-        observer.observe(textElement);
+    //     observer.observe(textElement);
     
-        return () => {
-          observer.disconnect();
-        };
-      }, []);
+    //     return () => {
+    //       observer.disconnect();
+    //     };
+    //   }, []);
     return (
         <section className="work-section">
             <div className='relative flex justify-center'>
-                <div id="text-element" className='h-full absolute text-white font-bold text-8xl content-center'>
-                    <h2>WORK</h2>
+                <div>
                 </div>
+                <h2 id="text-element" className='h-full absolute text-white font-bold text-8xl content-center opacity-100 mix-blend-difference'>WORK</h2>
                 <Image
                     src="/work.gif"
                     alt="Work display"
