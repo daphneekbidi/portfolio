@@ -26,17 +26,21 @@ const Work = () => {
     //   }, []);
     return (
         <section className="work-section">
-            <div className='relative flex justify-center'>
-                <div>
-                </div>
-                <h2 id="text-element" className='h-full absolute text-white font-bold text-8xl content-center opacity-100 mix-blend-difference'>WORK</h2>
-                <Image
-                    src="/work.gif"
+            <div className='relative flex justify-center bg-[#f1f2e0] py-16'>
+                <h2 id="text-element" className='top-40 space-x-10 absolute text-white font-bold text-8xl content-center opacity-100 mix-blend-difference'>
+                    <span className='inline-block'>W</span>
+                    <span className='inline-block'>O</span>
+                    <span className='inline-block'>R</span>
+                    <span className='inline-block'>K</span>
+                </h2>
+                <Image className='max-h-60 max-w-60 rounded-2xl'
+                    src="/work1.gif"
                     alt="Work display"
                     width={1920}
                     height={1080}
                     layout="responsive"
                     priority
+                    unoptimized
                 />
             </div>
             <div className="work-content">
