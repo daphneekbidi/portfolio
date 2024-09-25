@@ -5,13 +5,13 @@ const Navbar = () => {
       <>
       <div className='flex justify-between items-center px-5 py-3'>
         <a href="/" aria-label="Homepage" className='relative'>
-          <div className='bg-[#f1f2e0] h-3 absolute top-3 left-[2px] w-[97%] -z-10 rounded-sm'></div>
-          <span className='block text-2xl'>Daphnee KBIDI</span>
+          <div className='bg-pistache h-3 absolute top-3 left-[2px] w-[97%] -z-10 rounded-sm'></div>
+          <span className='block text-2xl bold'>Daphnee KBIDI</span>
         </a>
         <nav aria-label="Main Navigation">
           <ul className="list-none flex gap-5">
-            <li className='text-sm no-underline focus:underline hover:underline'><a href="#work" aria-label="Work Section">Work</a></li>
-            <li className='text-sm no-underline focus:underline hover:underline'><a href="#contact" aria-label="Contact Section">Contact</a></li>
+            <li className='text-lg no-underline focus:underline hover:underline'><a href="#work" aria-label="Work Section">Work</a></li>
+            <li className='text-lg no-underline focus:underline hover:underline'><a href="#contact" aria-label="Contact Section">Contact</a></li>
           </ul>
         </nav>
       </div>
