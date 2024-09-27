@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="px-8 bg-pistache">
       <div className="header-content flex flex-col md:flex-row-reverse md:justify-evenly">
-        <div className="mt-14" aria-label="Auto-portrait made by AI">
+        <div className="mt-14 self-center" aria-label="Auto-portrait made by AI">
           <Image 
             src="/portrait.jpg"
             alt="Portrait"
