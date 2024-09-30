@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 const Work = () => {
-    const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50';
+    const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50 shadow-none transition-shadow duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
     return (
         <section id='work' className="work-section">
             <div className='relative flex justify-center bg-gradient-to-b from-70% from-pistache py-16'>
@@ -13,7 +13,7 @@ const Work = () => {
                     <span className='inline-block'>K</span>
                 </h2>
                 <Image className='max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]'
-                    src="/work1.gif"
+                    src="/work.gif"
                     alt="Work display"
                     width={1920}
                     height={1080}
@@ -38,7 +38,7 @@ const Work = () => {
                                     alt="Polaroid Logo"
                                     width={200}
                                     height={200}
-                                    className='w-full h-full object-cover md:px-1'
+                                    className='w-full h-full object-contain md:px-1'
                                 />
                             </a>
                         </div>
@@ -104,6 +104,19 @@ const Work = () => {
                         Here is a freelance project I did with LeylineXR for a National Geography event in 2024, where I did the UX design and front-end in React/Tailwind CSS.
                     </p> */}
                     <div className={`${borderClasses} flex justify-center`}>
+                        <div className="w-52 h-40 content-center text-center">
+                            <a href="https://uk.norlanglass.com/" className='flex justify-center'>
+                                <Image 
+                                    src="/norlan.png"
+                                    alt="Norlan Logo"
+                                    width={200}
+                                    height={200}
+                                    className='w-full h-full object-cover md:px-5'
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div className={`${borderClasses} flex justify-center md:col-start-2`}>
                         <div className="w-52 h-40 content-center text-center">
                             <a href="https://imagineoceans.app/" className='flex justify-center'>
                                 <Image 
