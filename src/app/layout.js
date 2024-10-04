@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className='antialiased bg-[fafafa]'
+        className='antialiased bg-[fafafa] scroll-smooth'
         style={{ fontFamily: 'Inconsolata-Regular' }} >
         {children}
       </body>
