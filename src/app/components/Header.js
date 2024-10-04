@@ -3,15 +3,15 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="px-8 bg-pistache">
+    <header className="px-8 bg-pistache md:py-20">
       <div className="header-content flex flex-col md:flex-row-reverse md:justify-evenly">
         <div className="mt-14 self-center" aria-label="Auto-portrait made by AI">
           <Image 
             src="/portrait.jpg"
             alt="Portrait"
-            className='rounded-full'
-            width={350}
-            height={350}
+            className='rounded-full md:rounded-none'
+            width={450}
+            height={450}
             priority
           />
         </div>
