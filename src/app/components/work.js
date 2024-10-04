@@ -1,18 +1,74 @@
+// React Server Components
 "use client";
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 const Work = () => {
     const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50 shadow-none transition-shadow duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
+    const textRef = useRef(null);
+    const imageRef = useRef(null);
+    const [scrollY, setScrollY] = useState(0);
+    const [isImageInView, setIsImageInView] = useState(false); // Track if the image is in view
+
+    // Update scroll position on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+        setScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Use IntersectionObserver to track when the image is in view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setIsImageInView(true); // Image is in view
+            } else {
+                setIsImageInView(false); // Image is out of view
+            }
+            });
+        },
+        { threshold: 0.1 } // Trigger when 10% of the image is visible
+        );
+
+        if (imageRef.current) {
+        observer.observe(imageRef.current);
+        }
+
+        return () => {
+        if (imageRef.current) {
+            observer.unobserve(imageRef.current);
+        }
+        };
+    }, []);
+
     return (
-        <section id='work' className="work-section">
-            <div className='relative flex justify-center bg-gradient-to-b from-70% from-pistache py-16'>
-                <h2 id="text-element" className='top-44 space-x-10 absolute text-white font-bold text-8xl content-center opacity-100 mix-blend-difference md:text-[14rem]'>
+        <section id='work'>
+            <div className='relative flex justify-center bg-gradient-to-b from-70% from-pistache py-16 md:py-44'>
+                <h2 
+                ref={textRef}
+                id="text-element"
+                style={{
+                    transform: `translateY(${scrollY * 0.3}px)`, // Adjust the multiplier to control the speed
+                  }}
+                className={`font-mono top-8 space-x-10 absolute text-white font-bold text-8xl content-center mix-blend-difference md:text-[14rem] 
+                 ${isImageInView ? 'opacity-100, transition-opacity ease-in-out duration-150' : 'opacity-0'}`}>
                     <span className='inline-block'>W</span>
                     <span className='inline-block'>O</span>
                     <span className='inline-block'>R</span>
                     <span className='inline-block'>K</span>
                 </h2>
-                <Image className='max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]'
+
+                <Image 
+                    ref={imageRef}
+                    className='max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]'
                     src="/work.gif"
                     alt="Work display"
                     width={1920}
@@ -23,7 +79,7 @@ const Work = () => {
                 />
             </div>
             <div className="px-8 my-8 md:w-4/5 mx-auto">
-                <h2 className="text-justify text-2xl mb-16">
+                <h2 className="text-center text-2xl mb-16">
                     Brands I've worked with.
                 </h2>
                 {/* <p className="text-justify text-lg">
