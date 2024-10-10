@@ -7,68 +7,97 @@ const Work = () => {
     const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50 shadow-none transition-shadow duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
     const textRef = useRef(null);
     const imageRef = useRef(null);
+    const imageContainerRef = useRef(null);
     const [scrollY, setScrollY] = useState(0);
-    const [isImageInView, setIsImageInView] = useState(false); // Track if the image is in view
-
+    const [imageTop, setImageTop] = useState(0); // Track the top position of the image
+    const [imageHeight, setImageHeight] = useState(0); // Track the height of the image
+    const [isTitleAtTop, setIsTitleAtTop] = useState(false); // Track if title is at the top
+    const [translateY, setTranslateY] = useState(0); // Track the translateY for the title
+  
+    const titleHeight = 72; // Known title height
+  
     // Update scroll position on scroll
     useEffect(() => {
-        const handleScroll = () => {
+      const handleScroll = () => {
         setScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
         window.removeEventListener('scroll', handleScroll);
-        };
+      };
     }, []);
-
-    // Use IntersectionObserver to track when the image is in view
+  
+    // Get the image's position and height when it is rendered
     useEffect(() => {
-        const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                setIsImageInView(true); // Image is in view
-            } else {
-                setIsImageInView(false); // Image is out of view
-            }
-            });
-        },
-        { threshold: 0.1 } // Trigger when 10% of the image is visible
-        );
-
+      const updateImageMetrics = () => {
         if (imageRef.current) {
-        observer.observe(imageRef.current);
+          const rectContainer = imageContainerRef.current.getBoundingClientRect();
+          const rectImage = imageRef.current.getBoundingClientRect();
+          setImageTop(rectContainer.top + window.scrollY); // Get the top position relative to the page
+          setImageHeight(rectImage.height); // Get the height of the image
         }
+      };
+  
+      updateImageMetrics();
+      window.addEventListener('resize', updateImageMetrics); // Update on window resize
+  
+      return () => {
+        window.removeEventListener('resize', updateImageMetrics);
+      };
+    }, [imageRef]);
+  
+    // Detect when the title has reached the top of the image
+    useEffect(() => {
+      if (imageHeight > 0) {
+        console.log(imageHeight);
+        const offsetY = imageTop - scrollY; // Calculate the vertical distance from the top of the image
+        console.log('imageTop', imageTop);
+        console.log('scrollY', scrollY);
+        const maxTranslateY = imageHeight - titleHeight; // Stop the title at the bottom edge of the image
+        const percentageScrolled = offsetY / imageHeight; // Calculate how far the user has scrolled within the image's vertical range
+        console.log('percentageScrolled', percentageScrolled);
+        const newTranslateY = Math.max(0, Math.min(percentageScrolled * maxTranslateY, maxTranslateY)); // Move the title based on the scroll, but stop it within the bounds of the image
+        console.log('translateY', newTranslateY);
+  
+        // Set isTitleAtTop when the title reaches the top
+        if (newTranslateY === 0 && !isTitleAtTop) {
+          setIsTitleAtTop(true);
+        } else if (newTranslateY > 0 && isTitleAtTop) {
+          setIsTitleAtTop(false);
+        }
+  
+        setTranslateY(newTranslateY); // Update the translateY state with the new calculated value
+      }
+    }, [scrollY, imageHeight, imageTop, isTitleAtTop]);
 
-        return () => {
-        if (imageRef.current) {
-            observer.unobserve(imageRef.current);
-        }
-        };
-    }, []);
 
     return (
         <section id='work'>
-            <div className='relative flex justify-center bg-gradient-to-b from-70% from-pistache py-16 md:py-44'>
+            <div 
+                ref={imageContainerRef}
+                className='relative h-[30rem] flex justify-center bg-gradient-to-b from-70% from-pistache py-16 md:py-28 md:h-[50rem]'>
                 <h2 
                 ref={textRef}
                 id="text-element"
                 style={{
-                    transform: `translateY(${scrollY * 0.3}px)`, // Adjust the multiplier to control the speed
+                    transform: `translateY(${translateY}px)`, // Dynamically apply translateY from the state
                   }}
-                className={`font-mono top-8 space-x-10 absolute text-white font-bold text-8xl content-center mix-blend-difference md:text-[14rem] 
-                 ${isImageInView ? 'opacity-100, transition-opacity ease-in-out duration-150' : 'opacity-0'}`}>
-                    <span className='inline-block'>W</span>
-                    <span className='inline-block'>O</span>
-                    <span className='inline-block'>R</span>
-                    <span className='inline-block'>K</span>
+                className={`font-mono z-20 top-12 space-x-10 absolute text-white font-bold text-7xl content-center mix-blend-difference md:text-[10rem] transition-all ease-in-out duration-300 ${
+                    isTitleAtTop ? 'opacity-0' : 'opacity-100'
+                }`}>
+                    <span className='inline-block hover:-translate-y-1/4 transition-transform'>W</span>
+                    <span className='inline-block hover:-translate-y-1/4 transition-transform'>O</span>
+                    <span className='inline-block hover:-translate-y-1/4 transition-transform'>R</span>
+                    <span className='inline-block hover:-translate-y-1/4 transition-transform'>K</span>
                 </h2>
-
-                <Image 
+                <Image
                     ref={imageRef}
-                    className='max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]'
+                    className={`max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
+                    transition-transform ease-in-out duration-500 ${
+                        isTitleAtTop ? 'scale-125 translate-y-32' : 'scale-100'
+                    }`} 
                     src="/work.gif"
                     alt="Work display"
                     width={1920}
@@ -78,6 +107,7 @@ const Work = () => {
                     unoptimized
                 />
             </div>
+
             <div className="px-8 my-8 md:w-4/5 mx-auto">
                 <h2 className="text-center text-2xl mb-16">
                     Brands I've worked with.
