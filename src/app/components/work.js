@@ -112,9 +112,6 @@ const Work = () => {
                 <h2 className="text-center text-2xl mb-16">
                     Brands I've worked with.
                 </h2>
-                {/* <p className="text-justify text-lg">
-                    I maintained their websites from 2020 to 2022, EU and US when I was part of the web agency AskPhill in the Netherlands. (Polaroid did fully re-build their site recently) 
-                </p> */}
                 <div className='space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-3'>
                     <div className={`${borderClasses} flex justify-center`}>
                         <div className="w-72 h-40">
@@ -137,15 +134,11 @@ const Work = () => {
                                     alt="Cluse Logo"
                                     width={200}
                                     height={200}
-                                    className='w-full h-full object-cover md:px-12'
+                                    className='w-full h-full object-cover px-12'
                                 />
                             </a>
                         </div>
                     </div> 
-
-                {/* <p className="text-justify text-lg">
-                    At the same web agency, I worked for theses brand to build their custom storefront on Shopify from scratch.
-                </p> */}
                     <div className={`${borderClasses} flex justify-center`}>
                         <div className="h-40 content-center text-center">
                             <a href="https://summumwoman.com/en" className='flex justify-center'>
@@ -154,7 +147,7 @@ const Work = () => {
                                     alt="Summum Woman Logo"
                                     width={200}
                                     height={200}
-                                    className='w-full h-full object-cover md:px-12'
+                                    className='w-full h-full object-cover px-12'
                                 />
                             </a>
                         </div>
@@ -167,7 +160,7 @@ const Work = () => {
                                     alt="North Action Group Logo"
                                     width={200}
                                     height={200}
-                                    className='w-full h-full object-cover md:px-12'
+                                    className='w-full h-full object-cover px-12'
                                 />
                             </a>
                         </div>
@@ -186,9 +179,6 @@ const Work = () => {
                         </div>
                     </div>
 
-                    {/* <p className="text-justify text-lg">
-                        Here is a freelance project I did with LeylineXR for a National Geography event in 2024, where I did the UX design and front-end in React/Tailwind CSS.
-                    </p> */}
                     <div className={`${borderClasses} flex justify-center`}>
                         <div className="w-52 h-40 content-center text-center">
                             <a href="https://uk.norlanglass.com/" className='flex justify-center'>
