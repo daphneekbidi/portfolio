@@ -21,7 +21,7 @@ const Header = () => {
           </h1> 
           <span className='block text-xl mt-2'>I come from Reunion Island, France and live now in Thailand.</span>
           <p className='text-base text-justify mt-6'>
-            I love brewing tea in the morning and open my Macbook to code 💻 from home. When I&apos;m not squashing bugs, you&apos;ll find me daydreaming about the next project or petting my cats 🐱. I've worked a lot with custom Shopify websites and React-based with Next.js web applications. Let&apos;s create something awesome together!
+            I love brewing tea in the morning and open my Macbook to code 💻 from home. When I&apos;m not squashing bugs, you&apos;ll find me daydreaming about the next project or petting my cats 🐱. I&apos;ve worked a lot with custom Shopify websites and React-based with Next.js web applications. Let&apos;s create something awesome together!
           </p>
         </div>
       </div>
