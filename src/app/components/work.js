@@ -39,7 +39,6 @@ const Work = () => {
           setImageHeight(rectImage.height); // Get the height of the image
         }
       };
-  
       updateImageMetrics();
       window.addEventListener('resize', updateImageMetrics); // Update on window resize
   
@@ -51,23 +50,16 @@ const Work = () => {
     // Detect when the title has reached the top of the image
     useEffect(() => {
       if (imageHeight > 0) {
-        console.log(imageHeight);
         const offsetY = imageTop - scrollY; // Calculate the vertical distance from the top of the image
-        console.log('imageTop', imageTop);
-        console.log('scrollY', scrollY);
         const maxTranslateY = imageHeight - titleHeight; // Stop the title at the bottom edge of the image
         const percentageScrolled = offsetY / imageHeight; // Calculate how far the user has scrolled within the image's vertical range
-        console.log('percentageScrolled', percentageScrolled);
-        const newTranslateY = Math.max(0, Math.min(percentageScrolled * maxTranslateY, maxTranslateY)); // Move the title based on the scroll, but stop it within the bounds of the image
-        console.log('translateY', newTranslateY);
-  
+        const newTranslateY = Math.max(0, Math.min(percentageScrolled * maxTranslateY, maxTranslateY)); // Move the title based on the scroll, but stop it within the bounds of the image  
         // Set isTitleAtTop when the title reaches the top
         if (newTranslateY === 0 && !isTitleAtTop) {
           setIsTitleAtTop(true);
         } else if (newTranslateY > 0 && isTitleAtTop) {
           setIsTitleAtTop(false);
         }
-  
         setTranslateY(newTranslateY); // Update the translateY state with the new calculated value
       }
     }, [scrollY, imageHeight, imageTop, isTitleAtTop]);
@@ -110,7 +102,7 @@ const Work = () => {
 
             <div className="px-8 my-8 md:w-4/5 mx-auto">
                 <h2 className="text-center text-2xl mb-16">
-                    Brands I've worked with.
+                    Brands I&apos;ve worked with.
                 </h2>
                 <div className='space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-3'>
                     <div className={`${borderClasses} flex justify-center`}>
