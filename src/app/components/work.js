@@ -86,7 +86,19 @@ const Work = () => {
                 </h2>
                 <Image
                     ref={imageRef}
-                    className={`max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
+                    className={`mobile block lg:hidden max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
+                    transition-transform ease-in-out duration-500 ${
+                        isTitleAtTop ? 'scale-125 translate-y-32' : 'scale-100'
+                    }`} 
+                    src="/work-mobile.gif"
+                    alt="Work display"
+                    width={400}
+                    height={400}
+                    layout="responsive"
+                />
+                <Image
+                    ref={imageRef}
+                    className={`hidden lg:block max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
                     transition-transform ease-in-out duration-500 ${
                         isTitleAtTop ? 'scale-125 translate-y-32' : 'scale-100'
                     }`} 
@@ -95,8 +107,6 @@ const Work = () => {
                     width={1920}
                     height={1080}
                     layout="responsive"
-                    priority
-                    unoptimized
                 />
             </div>
 
