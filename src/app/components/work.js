@@ -101,7 +101,7 @@ const Work = () => {
             </div>
 
             <div className="p-8 md:w-4/5 mx-auto">
-                <h2 className="text-center text-2xl mb-16">
+                <h2 className="text-center text-2xl mb-16 text-black">
                     Brands I&apos;ve worked with.
                 </h2>
                 <div className='space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-3'>
