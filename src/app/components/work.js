@@ -66,7 +66,7 @@ const Work = () => {
 
 
     return (
-        <section id='work'>
+        <section id='work' className='bg-blanc'>
             <div 
                 ref={imageContainerRef}
                 className='relative h-[30rem] flex justify-center bg-gradient-to-b from-70% from-pistache py-16 md:py-28 md:h-[50rem]'>
@@ -100,7 +100,7 @@ const Work = () => {
                 />
             </div>
 
-            <div className="px-8 my-8 md:w-4/5 mx-auto">
+            <div className="p-8 md:w-4/5 mx-auto">
                 <h2 className="text-center text-2xl mb-16">
                     Brands I&apos;ve worked with.
                 </h2>

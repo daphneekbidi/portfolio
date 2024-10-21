@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
       <>
-      <div className='flex justify-between items-center px-5 py-3 sticky top-0 bg-white z-20'>
+      <div className='flex justify-between items-center px-5 py-3 sticky top-0 bg-blanc z-20'>
         <a href="/" aria-label="Homepage" className='relative'>
           <div className='bg-pistache h-3 absolute top-3 left-[2px] w-[97%] -z-10 rounded-sm'></div>
           <span className='block text-2xl bold text-black'>Daphnee KBIDI</span>
