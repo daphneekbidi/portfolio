@@ -7,7 +7,7 @@ const Header = () => {
       <div className="header-content flex flex-col md:flex-row-reverse md:justify-evenly">
         <div className="mt-14 self-center" aria-label="Auto-portrait made by AI">
           <Image 
-            src="/self-portrait.jpg"
+            src="/daphnee.jpg"
             alt="Portrait"
             className='rounded-full'
             width={420}
