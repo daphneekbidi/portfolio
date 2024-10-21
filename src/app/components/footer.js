@@ -5,7 +5,7 @@ import Icon from './icons';
 const Footer = () => {
     return (
         <footer className='flex flex-row py-16 px-8 justify-center bg-white'>
-            <div className='flex space-x-2 pr-4 text-black'>
+            <div className='flex space-x-2 pr-4'>
                 <a href="https://github.com/daphneekbidi" target="_blank" rel="noopener noreferrer" aria-label="Navigate to Github profile">
                     <Icon iconName="github"/>
                 </a>
@@ -16,7 +16,7 @@ const Footer = () => {
                     <Icon iconName="instagram"/>
                 </a>
             </div>
-            <p className='content-center'>© 2024 by DKF</p>
+            <p className='content-center text-black'>© 2024 by DKF</p>
         </footer>
     );
 };
