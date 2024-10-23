@@ -94,7 +94,6 @@ const Work = () => {
                     alt="Work display"
                     width={400}
                     height={400}
-                    layout="responsive"
                 />
                 <Image
                     ref={imageRef}
@@ -106,7 +105,6 @@ const Work = () => {
                     alt="Work display"
                     width={1920}
                     height={1080}
-                    layout="responsive"
                 />
             </div>
 
