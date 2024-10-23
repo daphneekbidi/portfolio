@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    swcMinify: true, // Ensure SWC minification is enabled
+  };
+  
+  export default nextConfig;
