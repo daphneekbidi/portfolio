@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Create a custom icon component
 function Icon({ iconName }) {
   // Define a mapping of icon names to their respective SVG paths or components
