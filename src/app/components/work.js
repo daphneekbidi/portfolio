@@ -13,7 +13,6 @@ const Work = () => {
     const [imageHeight, setImageHeight] = useState(0); // Track the height of the image
     const [isTitleAtTop, setIsTitleAtTop] = useState(false); // Track if title is at the top
     const [translateY, setTranslateY] = useState(0); // Track the translateY for the title
-  
     const titleHeight = 72; // Known title height
   
     // Update scroll position on scroll
@@ -76,7 +75,7 @@ const Work = () => {
                 style={{
                     transform: `translateY(${translateY}px)`, // Dynamically apply translateY from the state
                   }}
-                className={`font-mono z-20 top-12 space-x-10 absolute text-white font-bold text-7xl content-center mix-blend-difference md:text-[10rem] transition-all ease-in-out duration-300 ${
+                className={`font-mono z-20 -top-3 space-x-10 absolute text-white font-bold text-7xl content-center mix-blend-difference md:text-[10rem] transition-all ease-in-out duration-300 ${
                     isTitleAtTop ? 'opacity-0' : 'opacity-100'
                 }`}>
                     <span className='inline-block hover:-translate-y-1/4 transition-transform'>W</span>
