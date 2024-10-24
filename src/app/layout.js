@@ -18,6 +18,7 @@ export const metadata = {
         alt: 'Portrait',
       },
     ],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
