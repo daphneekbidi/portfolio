@@ -11,7 +11,7 @@ const Header = () => {
             className='rounded-full'
             width={420}
             height={420}
-            priority
+            priority={true}
           />
         </div>
         <div className="my-4 header-text md:w-1/2 content-center items-center">
