@@ -86,14 +86,14 @@ const Work = () => {
                 </h2>
                 <Image
                     ref={imageRef}
-                    className={`block lg:hidden max-h-60 max-w-60 rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
+                    className={`block lg:hidden max-h-[312px] max-w-[317px] rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
                     transition-transform ease-in-out duration-500 ${
                         isTitleAtTop ? 'scale-125 translate-y-32' : 'scale-100'
                     }`} 
                     src="/work-mobile.gif"
                     alt="Work display"
-                    width={400}
-                    height={400}
+                    width={317}
+                    height={312}
                     loading = 'lazy'
                 />
                 <Image
