@@ -16,7 +16,7 @@ const Header = () => {
         </div>
         <div className="my-4 header-text md:w-1/2 content-center items-center">
           <h1 className='text-5xl mt-8 mb-4 text-black'>
-            Hi I&apos;m a <strong>web developer</strong>, ecommerce enthousiast.
+            Hi I&apos;m a <strong>web developer</strong>, ecommerce enthusiast.
           </h1> 
           <span className='block text-xl mt-2 text-black'>I come from Reunion Island(France) and live now in Thailand.</span>
           <p className='text-base text-justify mt-6 text-black'>

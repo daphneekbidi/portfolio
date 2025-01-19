@@ -3,10 +3,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 
 export const metadata = {
-  title: "Hi I'm Daphnee, a web developer",
+  title: "Daphnee, Web developer",
   description: 'This is an personal website built with Next.js 13.',
   openGraph: {
-    title: "Hi I'm Daphnee, a web developer",
+    title: "Daphnee, Web developer",
     description: 'This is a personnal website built with Next.js 13.',
     url: 'https://www.daphneekbidi.com',
     siteName: 'My personal Website',
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@daphneekbidi',
-    title: 'My personnal Website',
+    title: 'Daphnee Kbidi, Web developer',
     description: 'This is an personnal website built with Next.js 13.',
     image: 'daphnee.jpg',
   },
