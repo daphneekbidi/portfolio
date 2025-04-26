@@ -12,10 +12,10 @@ const Work = () => {
                 <h2 
                 id="text-element"
                 className='text-black text-7xl md:text-[7rem] flex flex-col content-center px-4 bg-[#8ea069]'>
-                    <span className='inline-block hover:animate-bounce'>W</span>
-                    <span className='inline-block hover:animate-bounce'>O</span>
-                    <span className='inline-block hover:animate-bounce'>R</span>
-                    <span className='inline-block hover:animate-bounce'>K</span>
+                    <span className='inline-block'>W</span>
+                    <span className='inline-block'>O</span>
+                    <span className='inline-block'>R</span>
+                    <span className='inline-block'>K</span>
                 </h2>
                 <Image
                     className='block overflow-hidden md:max-h-[28rem] md:max-w-[28rem]
