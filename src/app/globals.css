@@ -48,3 +48,53 @@ div {
   vertical-align: baseline;
   text-decoration: none;
 }
+
+/* Minimalist rotating border */
+.minimalist-rotate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.minimalist-rotate::before {
+  content: '';
+  position: absolute;
+  width: 200vw; /* Extra wide to ensure coverage */
+  height: 200vw; /* Extra high to ensure coverage */
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    black
+  );
+  animation: rotate 5s linear infinite;
+}
+
+.minimalist-rotate::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: white;
+  border-radius: 9px;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
