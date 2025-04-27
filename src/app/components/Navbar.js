@@ -12,14 +12,14 @@ const Navbar = () => {
       <>
       <div className='flex justify-between items-center px-8 py-3 sticky top-0 bg-[#8ea069] z-20 md:px-16'>
         <a href="/" aria-label="Homepage" className='relative'>
-          <span className='block text-2xl bold text-white font-serif'>Daphnée KBIDI</span>
+          <span className='block text-2xl bold text-blanc font-serif'>Daphnée KBIDI</span>
         </a>
         <nav aria-label="Main Navigation">
           <ul className="list-none flex gap-5">
-            <li className='text-lg no-underline text-white focus:underline hover:underline'>
+            <li className='text-lg no-underline text-blanc focus:underline hover:underline'>
               <a href="#work" aria-label="Work Section" onClick={handleClick}>Work</a>
             </li>
-            <li className='text-lg text-white no-underline focus:underline hover:underline'>
+            <li className='text-lg text-blanc no-underline focus:underline hover:underline'>
               <a href="mailto:daphneekbidi@gmail.com?subject=Contact%20Request&body=Hello," target="_blank" rel="noopener noreferrer" aria-label="Contact Section">Contact</a>
             </li>
           </ul>
