@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="px-8 bg-gradient-to-b from-85% from-pistache to-blanc md:py-20">
-      <div className="header-content flex flex-col md:flex-row-reverse md:justify-evenly">
+    <header className="px-8 bg-gradient-to-b from-85% from-pistache to-blanc md:py-20 md:px-16">
+      <div className="header-content flex flex-col md:flex-row-reverse md:justify-between">
         <div className="mt-14 self-center" aria-label="Auto-portrait made by AI">
           <Image 
             src="/daphnee.jpg"
