@@ -3,9 +3,9 @@ import React from "react";
 const Skills = () => {
     return (
         
-        <section id='skills' className='py-16 md:py-28 bg-blanc px-8'>
-            <h2 className='text-4xl text-start mb-8 text-bold px-8 text-black'>SKILLS</h2>
-            <div className="minimalist-rotate md:px-8 md:py-8">
+        <section id='skills' className='py-16 md:py-28 bg-blanc px-8 md:px-16'>
+            <h2 className='text-4xl text-start mb-8 text-bold text-black'>SKILLS</h2>
+            <div className="minimalist-rotate md:py-8">
                 <div className='content my-6 grid grid-cols-2 gap-28 text-black md:gap-40 md:grid-cols-3 md:justify-center'>
                     <div className='flex flex-col md:w-1/3'>
                         <h3 className='text-2xl mb-4 uppercase'>Frontend</h3>
