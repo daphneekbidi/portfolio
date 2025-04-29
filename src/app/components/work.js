@@ -25,6 +25,7 @@ const Work = () => {
                     width={1920}
                     height={1920}
                     loading= 'lazy'
+                    unoptimized={true}
                 />
             </div>
 
