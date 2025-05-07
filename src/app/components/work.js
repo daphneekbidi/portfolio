@@ -1,22 +1,63 @@
 // React Server Components
 "use client";
+import React, { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
 
 const Work = () => {
     const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50 shadow-none transition-shad duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-300px' });
+    // Animation for the title
+    const letters = ['W', 'O', 'R', 'K'];
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+        },
+    };
+
+    const letterVariants = {
+        hidden: {
+        y: -50,
+        opacity: 0,
+        },
+        visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: 'spring',
+            stiffness: 100,
+            damping: 10,
+        },
+        },
+    };
 
     return (
         <section id='work' className='bg-blanc'>
             <div
                 className='flex justify-center mx-8 border border-black border-solid flex-row-reverse md:py-20 md:bg-[#8ea069] md:border-none md:mx-0'>
-                <h2 
-                id="text-element"
-                className='text-black text-7xl md:text-[7rem] flex flex-col content-center px-4 bg-[#8ea069]'>
-                    <span className='inline-block'>W</span>
-                    <span className='inline-block'>O</span>
-                    <span className='inline-block'>R</span>
-                    <span className='inline-block'>K</span>
-                </h2>
+                <motion.h2
+                    ref={ref}
+                    id="title-element"
+                    className="text-black text-7xl md:text-[7rem] flex flex-col content-center px-4 bg-[#8ea069]"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
+                    >
+                    {letters.map((letter, index) => (
+                        <motion.span
+                        key={index}
+                        className="inline-block"
+                        variants={letterVariants}
+                        >
+                        {letter}
+                        </motion.span>
+                    ))}
+                </motion.h2>
                 <Image
                     className='block overflow-hidden md:max-h-[28rem] md:max-w-[28rem]
                     transition-transform ease-in-out duration-500'
