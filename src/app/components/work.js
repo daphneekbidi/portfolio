@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 
 const Work = () => {
-    const borderClasses = 'border rounded-xl border-dashed border-black md:border-none md:hover:bg-pistache/50 shadow-none transition-shad duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
+    const borderClasses = 'border rounded-xl border-dashed border-black flex justify-center md:border-none md:hover:bg-pistache/50 shadow-none transition-shad duration-300 md:hover:shadow-lg md:hover:shadow-gray-200';
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-300px' });
     // Animation for the title
@@ -59,7 +59,7 @@ const Work = () => {
                     ))}
                 </motion.h2>
                 <Image
-                    className='block overflow-hidden md:max-h-[28rem] md:max-w-[28rem]
+                    className='block overflow-hidden md:rounded-2xl md:max-h-[28rem] md:max-w-[28rem]
                     transition-transform ease-in-out duration-500'
                     src="/work.gif"
                     alt="Work display"
@@ -75,7 +75,7 @@ const Work = () => {
                     Brands I&apos;ve worked with.
                 </h2>
                 <div className='space-y-4 md:grid md:space-y-0 md:grid-cols-3 md:gap-3'>
-                    <div className={`${borderClasses} flex justify-center`}>
+                    <div className={`${borderClasses}`}>
                         <div className="w-72 h-40">
                             <a href="https://www.polaroid.com/" target="_blank" rel="noopener noreferrer">
                                 <Image 
@@ -88,7 +88,7 @@ const Work = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`${borderClasses} flex justify-center`}>
+                    <div className={`${borderClasses}`}>
                         <div className="h-40 content-center text-center">
                             <a href="https://cluse.com/" className='flex justify-center' target="_blank" rel="noopener noreferrer">
                                 <Image 
