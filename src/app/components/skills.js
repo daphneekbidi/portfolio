@@ -7,7 +7,7 @@ const Skills = () => {
             <h2 className='text-4xl text-start mb-8 text-bold text-black'>SKILLS</h2>
             <div className="minimalist-rotate md:py-8">
                 <div className='content my-6 grid grid-cols-2 gap-28 text-black md:gap-36 lg:gap-64 md:grid-cols-3 md:justify-center'>
-                    <div className='flex flex-col md:w-1/3'>
+                    <div className='flex flex-col md:w-1/3 pl-4 md:p-0'>
                         <h3 className='text-2xl mb-4 uppercase'>Frontend</h3>
                         <ul>
                             <li>HTML5</li>
